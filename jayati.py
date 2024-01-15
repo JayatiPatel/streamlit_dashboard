@@ -5,7 +5,7 @@ from datetime import date  # Import 'date' from the 'datetime' module
 
 try:
     # Load data
-    url = "https://github.com/JayatiPatel/streamlit_dashboard/raw/main/Coffee_Chain_Sales.csv"
+    url = "https://raw.githubusercontent.com/JayatiPatel/streamlit_dashboard/main/Coffee_Chain_Sales.csv"
     df = pd.read_csv(url)
 
     df['Date'] = pd.to_datetime(df['Date'], format='%y-%m-%d')  # Correctly convert the 'Date' column
