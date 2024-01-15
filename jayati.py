@@ -98,3 +98,8 @@ try:
       st.altair_chart(chart7)
   else:
       st.warning("Column 'Target_sales' not found in the dataset.")
+
+except pd.errors.EmptyDataError:
+    st.error("Error: Empty dataset.")
+except Exception as e:
+    st.error(f"Error: {e}")
