@@ -4,10 +4,11 @@ import altair as alt
 from datetime import date  # Import 'date' from the 'datetime' module
 
 # Load data
-url = ("https://github.com/JayatiPatel/streamlit_dashboard/blob/main/Coffee_Chain_Sales%20.csv")
+url = "https://github.com/JayatiPatel/streamlit_dashboard/blob/main/Coffee_Chain_Sales%20.csv"
+
 # Load your dataset
 try:
-    df = pd.read_csv(data_url)
+    df = pd.read_csv(url)
 
     df['Date'] = pd.to_datetime(df['Date'], format='%y-%m-%d')  # Correctly convert the 'Date' column
 
