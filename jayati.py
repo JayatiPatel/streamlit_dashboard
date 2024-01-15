@@ -8,7 +8,7 @@ url = "https://github.com/JayatiPatel/streamlit_dashboard/blob/main/Coffee_Chain
 
 # Load your dataset
 try:
-    df = pd.read_csv(url)
+    df = pd.read_csv(url, sep=',')
 
     df['Date'] = pd.to_datetime(df['Date'], format='%y-%m-%d')  # Correctly convert the 'Date' column
 
