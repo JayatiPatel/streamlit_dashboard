@@ -44,12 +44,15 @@ try:
 
     # Query 1: Sales Performance Over Time
     st.subheader("Query 1: Sales Performance Over Time")
-    chart1 = alt.Chart(filtered_df).mark_line().encode(
-        x='Date:T',
-        y='Sales:Q',
-        color=alt.value('#238b45'),  # Explicitly set the color to the first shade of green
-    ).properties(width=600, height=300)
-    st.altair_chart(chart1)
+    if 'Date' in filtered_df.columns:
+        chart1 = alt.Chart(filtered_df).mark_line().encode(
+            x='Date:T',
+            y='Sales:Q',
+            color=alt.value('#238b45'),  # Explicitly set the color to the first shade of green
+        ).properties(width=600, height=300)
+        st.altair_chart(chart1)
+    else:
+        st.warning("Column 'Date' not found in the filtered dataset.")
 
     # Query 2: Product-wise Profitability
     st.subheader("Query 2: Product-wise Profitability")
