@@ -4,7 +4,7 @@ import altair as alt
 from datetime import date  # Import 'date' from the 'datetime' module
 
 # Provide the URL to your CSV file on GitHub
-data_url = "https://raw.githubusercontent.com/anish045007/Streamlit_Dashboard/main/train.csv"
+data_url = "https://github.com/JayatiPatel/streamlit_dashboard/blob/main/Coffee_Chain_Sales%20.csv"
 
 # Load your dataset
 try:
