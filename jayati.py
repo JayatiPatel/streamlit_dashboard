@@ -2,15 +2,16 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 from datetime import date
-from urllib.request import urlopen
+import requests
+from io import StringIO
 
 # Provide the URL to your CSV file on GitHub
 data_url = "https://github.com/JayatiPatel/streamlit_dashboard/blob/main/Coffee_Chain_Sales%20.csv"
 
 # Load your dataset
 try:
-    with urlopen(data_url) as response:
-        df = pd.read_csv(response, error_bad_lines=False, warn_bad_lines=False)
+    response = requests.get(data_url)
+    df = pd.read_csv(StringIO(response.text), error_bad_lines=False, warn_bad_lines=False)
 
     # Check if the required columns exist
     required_columns = ['Product_line', 'AreaCode', 'Date', 'Sales', 'Profit', 'Marketing', 'Total_expenses']
