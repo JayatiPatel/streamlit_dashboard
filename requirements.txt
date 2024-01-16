@@ -5,3 +5,4 @@ statsmodels
 streamlit
 altair
 datetime
+urllib
