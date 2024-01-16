@@ -8,7 +8,7 @@ data_url = "https://github.com/JayatiPatel/streamlit_dashboard/blob/main/Coffee_
 
 # Load your dataset
 try:
-    df = pd.read_csv(data_url, error_bad_lines=False)
+    df = pd.read_csv(data_url, error_bad_lines=False, warn_bad_lines=False)
 
     # Check if the required columns exist
     required_columns = ['Product_line', 'AreaCode', 'Date', 'Sales', 'Profit', 'Marketing', 'Total_expenses']
